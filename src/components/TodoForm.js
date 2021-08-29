@@ -4,7 +4,7 @@ function TodoForm(props) {
     // input for the value of the state, setInput function that will update the input value
     const [input, setInput] = useState(props.edit ? props.edit.value : ''); //init - empty string 
 
-    //
+    //init input Ref for useEffect
     const inputRef = useRef(null);
 
     //allows to focus on the specific part (input form)

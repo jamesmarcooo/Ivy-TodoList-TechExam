@@ -1,7 +1,7 @@
 ## Prerequisites 📋
 
 You'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [NPM](http://npmjs.com)) installed on your computer.\
-Also, kindly install [React Icons](https://react-icons.github.io/react-icons/).
+Also, kindly install [React Icons](https://react-icons.github.io/react-icons/) and [React Router](https://www.npmjs.com/package/react-router-dom).
 
 ---
 

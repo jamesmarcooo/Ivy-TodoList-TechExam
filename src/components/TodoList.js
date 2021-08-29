@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Todo from './Todo'
 import TodoForm from './TodoForm'
 
+
 function TodoList() {
     //init todos state where setTodos function update the todos value
     const [todos, setTodos] = useState([]) //empty array
@@ -47,13 +48,13 @@ function TodoList() {
     return (
         <div>
             <h1>What's the plan for today?</h1>
-             <TodoForm onSubmit={addTodo}/>                 {/*calls the function addTodo when submitted */}
-             <Todo 
+            <TodoForm onSubmit={addTodo}/>                 {/*calls the function addTodo when submitted */}
+            <Todo 
                 todos={todos}
                 completeTodo={completeTodo}
                 removeTodo={removeTodo}
                 updateTodo={updateTodo}
-             />
+            />
         </div>
     )
 }

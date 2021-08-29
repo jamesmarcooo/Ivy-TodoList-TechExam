@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 function TodoForm(props) {
     // input for the value of the state, setInput function that will update the input value
-    const [input, setInput] = useState('') //init - empty string 
+    const [input, setInput] = useState(props.edit ? props.edit.value : ''); //init - empty string 
+
+
 
     const handleChange = e => {
         /*saves the input once submitted*/

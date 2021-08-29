@@ -4,7 +4,13 @@ function TodoForm(props) {
     // input for the value of the state, setInput function that will update the input value
     const [input, setInput] = useState(props.edit ? props.edit.value : ''); //init - empty string 
 
+    //
+    const inputRef = useRef(null);
 
+    //allows to focus on the specific part (input form)
+    useEffect(() => {
+      inputRef.current.focus();
+    });
 
     const handleChange = e => {
         /*saves the input once submitted*/
@@ -33,6 +39,7 @@ function TodoForm(props) {
                 name="text" 
                 className='todo-input'
                 onChange={handleChange}
+                ref = {inputRef}
             />
             <button className="todo-button">Add Task</button>
         </form>

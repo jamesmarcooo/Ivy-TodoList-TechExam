@@ -10,9 +10,10 @@ function Todo({todos, completeTodo, removeTodo, updateTodo}) {
         value: ''
     })
 
+
     const submitUpdate = value => {
         /* save the edited task */
-        updateTodo(edit.todo, value)
+        updateTodo(edit.id, value);
         setEdit({
             id: null,
             value: ''

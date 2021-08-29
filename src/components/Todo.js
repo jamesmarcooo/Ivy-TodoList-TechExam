@@ -3,12 +3,25 @@ import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { TiEdit } from 'react-icons/ti'
 import TodoForm from './TodoForm'
 
-function Todo({todos, completeTodo, removeTodo}) {
+function Todo({todos, completeTodo, removeTodo, updateTodo}) {
     const [edit, setEdit] = useState({
         /*set the edit state value*/
         id: null,
         value: ''
     })
+
+    const submitUpdate = value => {
+        /* save the edited task */
+        updateTodo(edit.todo, value)
+        setEdit({
+            id: null,
+            value: ''
+        })
+    }
+
+    if(edit.id){
+        return <TodoForm edit={edit} onSubmit = {submitUpdate} />
+    }
 
     return todos.map((todo, index) => (
         /*mapping of the array*/
@@ -28,9 +41,9 @@ function Todo({todos, completeTodo, removeTodo}) {
                     className="delete-icon"
                 />
                 <TiEdit 
-                    onClick={() => setEdit({id: todo.id, value:todo.text})}     {/* calls setEdit function when edit icon was clicked */}
+                    onClick={() => setEdit({id: todo.id, value:todo.text})}     
                     className="edit-icon"                
-                />
+                />                                                              {/* calls setEdit function when edit icon was clicked */}
             </div>
 
         </div>

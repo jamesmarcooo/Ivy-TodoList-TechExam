@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 
 function TodoForm(props) {
     // input for the value of the state, setInput function that will update the input value
-    const [input, setInput] = useState(props.edit ? props.edit.value : ''); //init - empty string; for diff input form when updating
+    const [input, setInput] = useState(props.edit ? props.edit.value : ''); //init - empty string; retains current task text when updating
 
     //init input Ref for useEffect
     const inputRef = useRef(null);

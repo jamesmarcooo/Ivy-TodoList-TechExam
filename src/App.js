@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Router>
-        <Todohead />
+        <Todohead /> 
         <div className="todo-app">
           <Switch>
             <Route path='/' exact component={TodoList} />

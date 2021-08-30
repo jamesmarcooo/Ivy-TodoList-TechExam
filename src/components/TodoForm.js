@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 
 function TodoForm(props) {
     // input for the value of the state, setInput function that will update the input value
-    const [input, setInput] = useState(props.edit ? props.edit.value : ''); //init - empty string 
+    const [input, setInput] = useState(props.edit ? props.edit.value : ''); //init - empty string; for diff input form when updating
 
     //init input Ref for useEffect
     const inputRef = useRef(null);
@@ -30,20 +30,39 @@ function TodoForm(props) {
         setInput(''); //resets the form into empty string
     }
 
-    return (
-        <form className="todo-form" onSubmit={handleSubmit}> {/*calls handleSubmit when button was clicked*/}
-            <input 
-                type='text' 
-                placeholder='Add a task' 
-                value={input} 
-                name="text" 
-                className='todo-input'
-                onChange={handleChange}
-                ref = {inputRef}
-            />
-            <button className="todo-button">Add Task</button>
-        </form>
-    )
+return (
+    <form onSubmit={handleSubmit} className='todo-form'> {/*calls handleSubmit when button was clicked*/}
+      {props.edit ? (
+        <>
+          <input
+            placeholder='Update your task'
+            value={input}
+            onChange={handleChange}
+            name='text'
+            ref={inputRef}
+            className='todo-input edit'
+          />
+          <button onClick={handleSubmit} className='todo-button edit'>
+            Update
+          </button>
+        </>
+      ) : (
+        <>
+          <input
+            placeholder='Add a task'
+            value={input}
+            onChange={handleChange}
+            name='text'
+            className='todo-input'
+            ref={inputRef}
+          />
+          <button onClick={handleSubmit} className='todo-button'>
+            Add todo
+          </button>
+        </>
+      )}
+    </form>
+  )
 }
 
 export default TodoForm

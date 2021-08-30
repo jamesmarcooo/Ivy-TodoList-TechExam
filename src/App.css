@@ -91,8 +91,8 @@ h1 {
 .todo-button.edit {
   background: linear-gradient(
     90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
+    rgb(30, 143, 137) 0%,
+    rgb(39, 177, 170) 100%
   );
   padding: 16px 22px;
 }
@@ -111,38 +111,14 @@ h1 {
   color: #fff;
   background: linear-gradient(
     90deg,
-    rgba(29, 120, 115, 1) 0%,
-    rgb(46, 167, 161) 100%
+    rgb(30, 143, 137) 0%,
+    rgb(39, 177, 170) 100%
   );
 
   padding: 16px;
   border-radius: 5px;
   width: 90%;
 }
-/* 
-.todo-row:nth-child(4n + 1) {
-  background: linear-gradient(
-    90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
-  );
-}
-
-.todo-row:nth-child(4n + 2) {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 12, 241, 1) 0%,
-    rgba(250, 0, 135, 1) 100%
-  );
-} */
-
-/* .todo-row:nth-child(n) {
-  background: linear-gradient(
-    90deg,
-    rgb(255, 161, 20) 0%,
-    rgb(201, 114, 0) 100%
-  );
-} */
 
 .icons {
   display: flex;

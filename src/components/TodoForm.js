@@ -13,7 +13,7 @@ function TodoForm(props) {
     });
 
     const handleChange = e => {
-        /*saves the input once submitted*/
+        /*update and saves the input once submitted*/
         setInput(e.target.value)
     }
 

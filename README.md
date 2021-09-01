@@ -1,9 +1,29 @@
 ## Prerequisites 📋
 
-You'll need [Node.js](https://nodejs.org/en/download/), which comes with [NPM](http://npmjs.com), installed on your computer.\
+You'll need [Node.js](https://nodejs.org/en/download/), which comes with [NPM](http://npmjs.com), installed on your computer.
 Also, kindly install [React Icons](https://react-icons.github.io/react-icons/) and [React Router](https://www.npmjs.com/package/react-router-dom) for the front-end.
 
 ---
+
+## Commands
+
+### Front-end
+
+```
+npm install
+npm install react-icons --save
+npm install --save react-router-dom
+```
+
+---
+
+### Back-end ./server
+
+```
+npm install mongoose
+npm install express
+npm install cors
+```
 
 # Getting Started with Create React App
 

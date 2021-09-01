@@ -11,7 +11,7 @@ function App() {
         <Todohead /> 
         <div className="todo-app">
           <Switch>
-            <Route path='/todolist' exact component={TodoList} />
+            <Route path='/' exact component={TodoList} />
           </Switch>
         </div>
       </Router>

@@ -17,17 +17,23 @@ function TodoForm(props) {
         setInput(e.target.value)
     }
 
-    const handleSubmit = e => {
+    const handleSubmit = async(e) => {
         /*function that prevents the reloading of the page when a task was added*/
         e.preventDefault();
 
-        props.onSubmit({
-            /* generates unique ID for task for the input as props*/
-            id: Math.floor(Math.random() * 10000),
-            text: input
-        })
+        try{
+          props.onSubmit({
+              /* generates unique ID for task for the input as props*/
+              id: Math.floor(Math.random() * 10000),
+              text: input
+          })
 
-        setInput(''); //resets the form into empty string
+          setInput(''); //resets the form into empty string
+
+        }catch(error){
+          console.log(error);
+        }
+        
     }
 
 return (

@@ -2,14 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const taskSchema = new Schema({
-    task: {
-        type: String,
-        required: true,
-    },
-    completed: {
-        type: Boolean,
-        default: false,
-    },
+    id: { type: Number, required: true, unique: true },
+    value: { type: String, required: true }
+
 });
 
 module.exports = mongoose.model("task", taskSchema);

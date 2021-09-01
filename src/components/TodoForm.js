@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
+// import { addTask } from '../services/taskServices';
+
 
 function TodoForm(props) {
     // input for the value of the state, setInput function that will update the input value
@@ -20,6 +22,7 @@ function TodoForm(props) {
     const handleSubmit = async(e) => {
         /*function that prevents the reloading of the page when a task was added*/
         e.preventDefault();
+        
 
         try{
           props.onSubmit({

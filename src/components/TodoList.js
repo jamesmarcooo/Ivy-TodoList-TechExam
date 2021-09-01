@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { addTask } from '../services/taskServices'
 import Todo from './Todo'
 import TodoForm from './TodoForm'
 
@@ -26,7 +27,7 @@ function TodoList() {
           }
           return todo
         })
-        setTodos(updatedTodos)
+        setTodos(addTask(updatedTodos))
     }
 
     const removeTodo = id => {

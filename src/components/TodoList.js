@@ -7,7 +7,7 @@ function TodoList() {
     //init todos state where setTodos function update the todos value
     const [todos, setTodos] = useState([]) //empty array
 
-    const addTodo = todo => {
+    const addTodo = async(todo) => {
         /* adds a task; neglects unnecessary space(s) in the input and empty string*/
         if(!todo.text || /^\s*$/.test(todo.text)) {//Regex 
             return
@@ -15,7 +15,18 @@ function TodoList() {
 
         const newTodos = [todo, ...todos] //arrays of added tasks
 
-        setTodos(newTodos) //updates the array
+        
+        console.log('todos', todos)
+
+        await fetch('http://localhost:8080/api/create', {
+			method: 'POST',
+			body: JSON.stringify( {id: todo.id, value:todo.text} ),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+        setTodos(newTodos)
+    
     }
 
     const completeTodo = id => {
@@ -29,21 +40,39 @@ function TodoList() {
         setTodos(updatedTodos)
     }
 
-    const removeTodo = id => {
+    const removeTodo = async(id) => {
         /* removing a task thru filtering the spread array*/
         const removedArr = [...todos].filter(todo => todo.id !== id)
     
+        await fetch('http://localhost:8080/api/delete', {
+			method: 'POST',
+			body: JSON.stringify({id: id}),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+
         setTodos(removedArr)
     }
 
-    const updateTodo = (todoId, newValue) => {
+    const updateTodo = async(todoId, newValue) => {
         /* Editing the task */
         if(!newValue.text || /^\s*$/.test(newValue.text)) {//Regex 
             return
         }
 
+        await fetch('http://localhost:8080/api/modify', {
+			method: 'POST',
+			body: JSON.stringify({old: todoId, new: newValue.text}),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+        
         setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)))
+        
     }
+
 
     return (
         <div>

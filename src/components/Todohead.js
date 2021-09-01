@@ -6,7 +6,7 @@ function Todohead() {
     return (
         // Header todoList
         <div>
-             <Link to="/todolist" className="todo-head">       {/*Implement router that links the home page when clicked */}
+             <Link to="/" className="todo-head">       {/*Implement router that links the home page when clicked */}
                 TO-DO LIST  
             </Link>
         </div>

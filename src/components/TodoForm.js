@@ -20,17 +20,17 @@ function TodoForm(props) {
     const handleSubmit = e => {
         /*function that prevents the reloading of the page when a task was added*/
         e.preventDefault();
+        
+          props.onSubmit({
+              /* generates unique ID for task for the input as props*/
+              id: Math.floor(Math.random() * 10000),
+              text: input
+          })
 
-        props.onSubmit({
-            /* generates unique ID for task for the input as props*/
-            id: Math.floor(Math.random() * 10000),
-            text: input
-        })
-
-        setInput(''); //resets the form into empty string
+          setInput(''); //resets the form into empty string
     }
 
-return (
+  return (
     <form onSubmit={handleSubmit} className='todo-form'> {/*calls handleSubmit when button was clicked*/}
       {props.edit ? (
         <>
